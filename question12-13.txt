@@ -1,0 +1,19 @@
+Question 12
+Go to Ensembl to find the region of the variant and the id 
+
+USE --> GET map/cds/:id/:region
+
+'http://rest.ensembl.org/cds/ENSMUST00000088677/4:136443899..136443999' -H 'Content-type:application/json'
+
+
+Question 13
+Go to ensembl genome browser and look for the zebrafish MYCN --> click on the result here you can find the chromosome and the region of the gene (Chromosome 20: 33,294,428-33,299,384)
+
+USE --> GET sequence/region/:species/:region
+
+curl 'http://rest.ensembl.org/sequence/region/zebrafish/20:33294428..33294527' -H 'Content-type:text/x-fasta'
+
+>chromosome:GRCz11:20:33294428:33294527:1
+TAGAATAATACTTCACAGCCCGAAACACAGAGGCGCAGAACAGTCTTCAGTCGCCGCGGT
+AGATGTGCGACTCCAAACGGGAGGCACAGTGACTGCGATA
+

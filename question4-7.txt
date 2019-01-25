@@ -1,0 +1,26 @@
+Question 4:
+
+select gene_name, (seq_region_end-seq_region_start+1) as length from gene order by length asc limit 1;
+
+--> TRDD1 (length = 8)
+
+Question 5:
+
+select gene_name, count(transcript_id) as transcripts from gene g join transcript t on g.gene_id = t.gene_id group by gene_name order by transcripts desc limit 1;
+
+--> U6: 1329
+
+Question 6:
+
+select chromosome, count(*) as genes from gene where description like "%cancer%' group by chromosome order by genes desc limit 1 offset 1;
+
+
+-->  chromosome 2: 3852
+
+select chromosome, sum(count(exon_id)) from gene g join transcript t on g.gene_id = t.gene_id join exon_transcript et on t.transcript_id = et.transcript_id where chromosome = 2 group by g.gene_id, t.transcript_id;
+
+Question 7:
+
+select count(exon_id) from exon;
+
+select count(exon_id) from exon_transcript;

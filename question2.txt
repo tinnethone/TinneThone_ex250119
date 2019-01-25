@@ -1,0 +1,25 @@
+UNF: data(Personnel number, Name, Date of birth, Lab code, Lab name, Research code, Research description, Research supervisor) 
+
+      --> all the infromation that has to be included in the dataset
+
+1NF: personnel(Personnel number, Name, Date of birth, Lab code, Lab name)
+      research(Research code, Research description, Research supervisor, Personnel number)
+      
+      primary keys = 1) Personnel number 2) Research code
+      
+      --> there are no repeating groups anymore 
+
+2NF:   personnel(Personnel number, Name, Date of birth)
+         lab(Personnel number, Lab code, Lab name)
+         research(Research code, Research description, Research supervisor, Personnel number)        
+
+         primary keys = 1) Personnel number 2) Personnel number, Lab code 3) research code, personnel number
+         
+      --> non keys are now dependent from the whole primary key 
+     
+
+3NF:  personnel(Personnel number, Name, Date of birth)
+         lab(Personnel number, Lab code, Lab name)
+         research(Research code, Research description, Research supervisor, Personnel number)             
+
+      --> non key elements or not dependent from each other

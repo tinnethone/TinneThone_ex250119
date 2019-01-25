@@ -1,0 +1,18 @@
+Question 8
+
+db.mongo_exam.count({"method_of_admission": {$elemMatch: {"TABLET;BUCCAL, SUBLINGUAL"}}, {drug:1}})
+
+question 9
+
+db.mongo_exam.count({"percentage_of_side_effects": {$gt: 8}})
+
+--> 399
+
+question 10
+
+db.mongo_exam.aggregate([{$group: {_id: "$company", avgside: {$avg: "$percentage_of_side_effects}}}, {$match: {avgside: {$gt: 10}}}])
+
+question 11
+
+
+
